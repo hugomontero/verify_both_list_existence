@@ -1,0 +1,39 @@
+{
+  "name": "verify_both_list_existence",
+  "version": "1.0.0",
+  "description": "given two arrays, verify if exists an element in both of them",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest --passWithNoTests",
+    "prettier": "prettier --write src/* && prettier --write __tests__",
+    "lint": "eslint --cache --report-unused-disable-directives --fix src/*"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hugomontero/verify_both_list_existence.git"
+  },
+  "author": "hugo.montero",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hugomontero/verify_both_list_existence/issues"
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
+      "pre-commit": "npx prettier --write src/* && npx prettier __tests__/* && npx eslint --cache --report-unused-disable-directives --fix src/* && npx jest --passWithNoTests"
+    }
+  },
+  "homepage": "https://github.com/hugomontero/verify_both_list_existence#readme",
+  "devDependencies": {
+    "@commitlint/cli": "^11.0.0",
+    "@commitlint/config-conventional": "^11.0.0",
+    "eslint": "^7.17.0",
+    "eslint-config-standard": "^16.0.2",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "husky": "^4.3.7",
+    "jest": "^26.6.3",
+    "prettier": "^2.2.1"
+  }
+}
