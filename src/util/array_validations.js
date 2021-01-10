@@ -6,16 +6,16 @@ const isAValidArray = (arr) => Boolean(arr && Array.isArray(arr))
  * O(NxM) (where N = length of executedProcesses array and M = length of failedProcesess array)
  */
 const bruteForce = (executedProcesses, failedProcesess) => {
- if (!(isAValidArray(executedProcesses) && isAValidArray(failedProcesess))) {
-  throw new Error("Not a valid elements received")
- }
- let foundElement = false
- for (let i = 0; i < executedProcesses.length; i++) {
-  for (let j = 0; j < failedProcesess.length; j++) {
-   if (executedProcesses[i] === failedProcesess[j]) foundElement = true
+  if (!(isAValidArray(executedProcesses) && isAValidArray(failedProcesess))) {
+    throw new Error('Not a valid elements received')
   }
- }
- return foundElement
+  let foundElement = false
+  for (let i = 0; i < executedProcesses.length; i++) {
+    for (let j = 0; j < failedProcesess.length; j++) {
+      if (executedProcesses[i] === failedProcesess[j]) foundElement = true
+    }
+  }
+  return foundElement
 }
 
 /**
@@ -28,13 +28,13 @@ const bruteForce = (executedProcesses, failedProcesess) => {
  */
 
 const isElementIncluded = (executedProcesses, failedProcesess) => {
- if (!(isAValidArray(executedProcesses) && isAValidArray(failedProcesess))) {
-  throw new Error("Not a valid elements received")
- }
- for (let i = 0; i < failedProcesess.length; i++) {
-  if (executedProcesses.includes(failedProcesess[i])) return true
- }
- return false
+  if (!(isAValidArray(executedProcesses) && isAValidArray(failedProcesess))) {
+    throw new Error('Not a valid elements received')
+  }
+  for (let i = 0; i < failedProcesess.length; i++) {
+    if (executedProcesses.includes(failedProcesess[i])) return true
+  }
+  return false
 }
 
 /**
@@ -47,18 +47,18 @@ const isElementIncluded = (executedProcesses, failedProcesess) => {
  *
  */
 const isElementIncludedInSet = (executedProcesses, failedProcesess) => {
- if (!(isAValidArray(executedProcesses) && isAValidArray(failedProcesess))) {
-  throw new Error("Not a valid elements received")
- }
- const executedSet = new Set(executedProcesses)
- for (let i = 0; i < failedProcesess.length; i++) {
-  if (executedSet.has(failedProcesess[i])) return true
- }
- return false
+  if (!(isAValidArray(executedProcesses) && isAValidArray(failedProcesess))) {
+    throw new Error('Not a valid elements received')
+  }
+  const executedSet = new Set(executedProcesses)
+  for (let i = 0; i < failedProcesess.length; i++) {
+    if (executedSet.has(failedProcesess[i])) return true
+  }
+  return false
 }
 
 module.exports = {
- bruteForce,
- isElementIncluded,
- isElementIncludedInSet,
+  bruteForce,
+  isElementIncluded,
+  isElementIncludedInSet
 }
