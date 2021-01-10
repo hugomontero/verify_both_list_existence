@@ -40,7 +40,7 @@ const isElementIncluded = (executedProcesses, failedProcesess) => {
 /**
  * this is an optimization to the previous function.
  * Using a Set we can reduce the time complexity becasuse for each element in failed processes we're
- * calling a O(1) function (set.has). In this case the time complexity is O(N) where N is the length of failedProcesess array
+ * calling a O(1) function (set.has). In this case the time complexity is O(A+B) where is the sum of the length of both arrays
  * Just one "problem" with this approach, generating Sets you need to allocate in memory the information of this set having in this case
  * a space complexity of O(M) where M is the length of executedProcesses array
  * The previous functions does not have this problem with memory.
