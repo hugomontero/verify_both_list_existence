@@ -1,6 +1,7 @@
-const hasBeenExecutedAndFailed = (executedProcesses, failedProcesses)=>{
-  return true
-} 
+const {
+ isElementIncludedInSet: hasBeenExecutedAndFailed,
+} = require("../src/util/array_validations")
+
 describe("testing has been executed and failed", () => {
  it("should throws when we receive non array variables", () => {
   const executedProcesses = []
